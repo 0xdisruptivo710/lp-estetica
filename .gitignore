@@ -1,0 +1,19 @@
+node_modules/
+.env
+.env.local
+.next/
+dist/
+build/
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+
+# Embedded git repositories (cloned references)
+leerob.io/
+magicui/
+Next-js-Boilerplate/
+open-react-template/
+tailwind-landing-page-template/
+taxonomy/
+ui/

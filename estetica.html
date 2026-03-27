@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIOS CRM — Gestão Inteligente para Estética Íntima</title>
+<meta name="description" content="CRM com IA para clínicas de estética íntima. Automatize atendimento, reative pacientes e organize sua equipe com inteligência e discrição.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,700;1,6..96,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   FOUNDATION
+   ============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --wine:#4A1530;
+  --wine-95:#3d1128;
+  --wine-alpha-8:rgba(74,21,48,.08);
+  --wine-alpha-50:rgba(74,21,48,.5);
+  --rose:#C9788A;
+  --rose-glow:rgba(201,120,138,.3);
+  --rose-12:rgba(201,120,138,.12);
+  --rose-06:rgba(201,120,138,.06);
+  --cream:#FAF7F5;
+  --cream-dark:#F3EDE9;
+  --gold:#C4A46B;
+  --gold-20:rgba(196,164,107,.2);
+  --gold-08:rgba(196,164,107,.08);
+  --blush:#F2C4CE;
+  --blush-20:rgba(242,196,206,.2);
+  --text-primary:#2A111C;
+  --text-secondary:#5C3D4A;
+  --text-tertiary:#8E6B7A;
+  --text-faint:#B89AA6;
+  --white:#fff;
+  --green:#25D366;
+  --serif:'Bodoni Moda',Georgia,'Times New Roman',serif;
+  --sans:'Outfit',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--cream);
+  color:var(--text-secondary);overflow-x:hidden;
+  line-height:1.65;font-weight:400;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--blush);color:var(--wine)}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input{font-family:inherit;border:none;outline:none}
+img{max-width:100%;display:block}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:9px}
+
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+
+/* ============================================================
+   TYPOGRAPHY SYSTEM
+   ============================================================ */
+.eyebrow{
+  font-family:var(--sans);font-size:.7rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rose);display:block;margin-bottom:20px;
+}
+.heading-xl{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.8rem,6.5vw,5.2rem);
+  line-height:1.02;letter-spacing:-.035em;
+  color:var(--text-primary);
+}
+.heading-xl em{font-style:italic;font-weight:400}
+.heading-lg{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.1;letter-spacing:-.02em;
+  color:var(--text-primary);
+}
+.heading-lg em{font-style:italic}
+.body-lg{font-size:1.05rem;line-height:1.8;color:var(--text-tertiary);font-weight:300;max-width:520px}
+
+/* ============================================================
+   REVEAL (JS-driven)
+   ============================================================ */
+[data-reveal]{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .9s cubic-bezier(.25,1,.5,1),transform .9s cubic-bezier(.25,1,.5,1);
+}
+[data-reveal].is-visible{opacity:1;transform:none}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  padding:22px 0;transition:all .5s cubic-bezier(.25,1,.5,1);
+}
+.nav.is-pinned{
+  padding:14px 0;
+  background:rgba(250,247,245,.88);
+  backdrop-filter:blur(24px) saturate(1.5);
+  -webkit-backdrop-filter:blur(24px) saturate(1.5);
+  box-shadow:0 1px 0 var(--gold-20);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+
+.nav-brand{
+  font-family:var(--serif);font-size:1.35rem;font-weight:500;
+  color:var(--wine);letter-spacing:-.01em;
+}
+.nav-brand span{color:var(--rose)}
+
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{
+  font-size:.8rem;font-weight:500;color:var(--text-tertiary);
+  letter-spacing:.04em;transition:color .3s;
+}
+.nav-links a:hover{color:var(--wine)}
+
+.nav-cta{
+  font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--white);
+  background:var(--wine);padding:11px 26px;border-radius:100px;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,21,48,.2)}
+
+.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-hamburger i{width:20px;height:1.5px;background:var(--wine);border-radius:2px;transition:all .3s}
+.nav-hamburger.open i:nth-child(1){transform:rotate(45deg) translate(4px,5px)}
+.nav-hamburger.open i:nth-child(2){opacity:0}
+.nav-hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(4px,-5px)}
+
+.nav-mobile{
+  position:fixed;inset:0;z-index:99;
+  background:rgba(250,247,245,.97);backdrop-filter:blur(40px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  opacity:0;pointer-events:none;transition:opacity .35s;
+}
+.nav-mobile.open{opacity:1;pointer-events:all}
+.nav-mobile a{
+  font-family:var(--serif);font-size:1.6rem;
+  color:var(--wine);transition:color .3s;
+}
+.nav-mobile a:hover{color:var(--rose)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:140px 0 80px;position:relative;overflow:hidden;
+  background:var(--cream);
+}
+
+/* subtle noise */
+.hero::after{
+  content:'';position:absolute;inset:0;
+  opacity:.02;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+
+/* warm radial wash */
+.hero-wash{
+  position:absolute;top:-20%;right:-10%;
+  width:700px;height:700px;
+  background:radial-gradient(circle,var(--blush-20),transparent 70%);
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr;
+  text-align:center;justify-items:center;
+}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 18px;border:1px solid var(--gold-20);border-radius:100px;
+  font-size:.72rem;font-weight:500;letter-spacing:.06em;
+  color:var(--text-tertiary);margin-bottom:36px;
+}
+.hero-eyebrow::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--gold);
+}
+
+.hero .heading-xl{max-width:780px;margin-bottom:28px}
+
+.hero-sub{
+  font-size:1.08rem;line-height:1.85;color:var(--text-tertiary);
+  max-width:540px;font-weight:300;margin-bottom:44px;
+}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+.btn-rose{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 34px;background:var(--rose);color:var(--white);
+  font-size:.82rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:100px;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 6px 28px var(--rose-glow);
+}
+.btn-rose:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(201,120,138,.4)}
+.btn-rose svg{width:15px;height:15px}
+
+.btn-outline-green{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 28px;
+  border:1.5px solid rgba(37,211,102,.3);color:#1a9e4a;
+  font-size:.82rem;font-weight:600;letter-spacing:.04em;
+  border-radius:100px;transition:all .35s;
+}
+.btn-outline-green:hover{
+  background:rgba(37,211,102,.07);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(37,211,102,.15);
+}
+.btn-outline-green svg{width:16px;height:16px}
+
+/* ============================================================
+   MARQUEE STRIP
+   ============================================================ */
+.marquee{
+  background:var(--wine);padding:14px 0;overflow:hidden;
+  position:relative;z-index:3;
+}
+.marquee-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:scroll 28s linear infinite;
+  width:max-content;
+}
+.marquee-track span{
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(250,247,245,.5);
+  padding:0 24px;
+}
+.marquee-track span b{color:var(--gold);font-weight:600}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ============================================================
+   PROBLEMS
+   ============================================================ */
+.problems{padding:120px 0;background:var(--white)}
+
+.problems-top{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:start;margin-bottom:64px;
+}
+.problems-top .heading-lg{max-width:420px}
+
+.problems-list{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid var(--gold-20);
+}
+
+.problem-item{
+  padding:28px 24px 28px 0;
+  border-bottom:1px solid var(--gold-20);
+  display:flex;gap:18px;align-items:flex-start;
+  transition:background .4s;
+}
+.problem-item:nth-child(odd){border-right:1px solid var(--gold-20);padding-right:24px;padding-left:0}
+.problem-item:nth-child(even){padding-left:24px}
+
+.problem-item:hover{background:var(--cream)}
+
+.problem-num{
+  font-family:var(--serif);font-size:1.6rem;font-weight:400;
+  color:var(--rose);line-height:1;min-width:32px;
+  letter-spacing:-.03em;padding-top:2px;
+}
+.problem-text{font-size:.92rem;line-height:1.65;color:var(--text-secondary);font-weight:400}
+
+/* ============================================================
+   SOLUTION
+   ============================================================ */
+.solution{padding:120px 0;background:var(--cream);position:relative;overflow:hidden}
+
+.solution-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;
+  align-items:center;
+}
+
+.solution-desc{
+  font-size:1.05rem;line-height:1.85;color:var(--text-tertiary);
+  margin:20px 0 32px;font-weight:300;
+}
+
+.solution-checks{display:flex;flex-direction:column;gap:14px}
+.check-item{display:flex;align-items:flex-start;gap:12px;font-size:.92rem}
+.check-icon{
+  width:22px;height:22px;min-width:22px;border-radius:50%;
+  background:var(--rose-12);display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.check-icon svg{width:12px;height:12px;color:var(--rose)}
+.check-text{color:var(--text-secondary);font-weight:400}
+.check-text strong{color:var(--text-primary);font-weight:600}
+
+/* Chat mockup */
+.chat-window{
+  background:var(--white);border:1px solid rgba(196,164,107,.12);
+  border-radius:20px;padding:24px;
+  box-shadow:0 24px 64px rgba(74,21,48,.06),0 1px 2px rgba(74,21,48,.03);
+}
+.chat-topbar{
+  display:flex;align-items:center;gap:8px;
+  padding-bottom:14px;margin-bottom:16px;
+  border-bottom:1px solid rgba(196,164,107,.08);
+}
+.chat-dot{width:7px;height:7px;border-radius:50%}
+.chat-dot-r{background:#ffb3ae}.chat-dot-y{background:#ffd88a}.chat-dot-g{background:#a3e6b5}
+.chat-dot-spacer{flex:1}
+.chat-topbar-label{font-size:.65rem;font-weight:600;color:var(--text-faint);letter-spacing:.08em;text-transform:uppercase}
+.chat-body{display:flex;flex-direction:column;gap:12px}
+.chat-bubble{
+  max-width:84%;padding:13px 17px;border-radius:18px;
+  font-size:.84rem;line-height:1.65;
+}
+.chat-bubble.from-patient{
+  align-self:flex-end;
+  background:linear-gradient(135deg,var(--rose),#d48a9a);
+  color:var(--white);border-bottom-right-radius:5px;
+}
+.chat-bubble.from-ai{
+  align-self:flex-start;
+  background:var(--cream);color:var(--text-secondary);
+  border:1px solid rgba(196,164,107,.08);
+  border-bottom-left-radius:5px;
+}
+.chat-bubble-label{
+  display:block;font-size:.58rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:5px;
+}
+.from-ai .chat-bubble-label{color:var(--rose)}
+.from-patient .chat-bubble-label{color:rgba(255,255,255,.6)}
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+.features{padding:120px 0;background:var(--white);position:relative}
+.features::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:60%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-20),transparent);
+}
+
+.features-top{text-align:center;margin-bottom:64px}
+.features-top .body-lg{margin:0 auto}
+
+.features-bento{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto;
+  gap:16px;
+}
+.features-bento .f-card:nth-child(1){grid-column:span 2}
+.features-bento .f-card:nth-child(4){grid-column:span 2}
+
+.f-card{
+  padding:36px 32px;
+  background:var(--cream);
+  border:1px solid transparent;
+  border-radius:18px;
+  transition:all .45s cubic-bezier(.25,1,.5,1);
+  position:relative;
+}
+.f-card::before{
+  content:'';position:absolute;top:0;left:32px;right:32px;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .5s cubic-bezier(.25,1,.5,1);
+}
+.f-card:hover::before{transform:scaleX(1)}
+.f-card:hover{
+  background:var(--white);
+  border-color:rgba(196,164,107,.1);
+  box-shadow:0 12px 40px rgba(74,21,48,.04);
+  transform:translateY(-4px);
+}
+
+.f-num{
+  font-family:var(--serif);font-size:1.3rem;font-weight:400;
+  color:var(--gold);margin-bottom:16px;
+  letter-spacing:-.02em;
+}
+
+.f-title{
+  font-family:var(--serif);font-size:1.2rem;font-weight:500;
+  color:var(--text-primary);margin-bottom:8px;
+}
+.f-desc{font-size:.88rem;color:var(--text-tertiary);line-height:1.7;font-weight:300}
+
+/* ============================================================
+   SOCIAL PROOF
+   ============================================================ */
+.proof{
+  padding:120px 0;position:relative;overflow:hidden;
+  background:var(--wine);color:var(--cream);
+}
+.proof::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 45% 50% at 15% 40%,rgba(201,120,138,.1),transparent),
+    radial-gradient(ellipse 40% 40% at 85% 60%,rgba(196,164,107,.06),transparent);
+  pointer-events:none;
+}
+
+.proof-inner{position:relative;z-index:2}
+.proof-header{text-align:center;margin-bottom:72px}
+.proof-header .eyebrow{color:var(--gold)}
+.proof-header .heading-lg{color:var(--cream)}
+.proof-header .heading-lg em{color:var(--blush)}
+
+/* Stats */
+.stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  margin-bottom:72px;
+  padding-bottom:72px;
+  border-bottom:1px solid rgba(196,164,107,.12);
+}
+.stat{text-align:center}
+.stat-number{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,6vw,4.5rem);
+  color:var(--blush);line-height:1;margin-bottom:8px;
+  letter-spacing:-.04em;
+}
+.stat-label{font-size:.88rem;color:rgba(250,247,245,.45);font-weight:400}
+
+/* Testimonials */
+.testimonials-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+.t-card{
+  padding:36px 30px;border-radius:18px;
+  background:rgba(250,247,245,.04);
+  border:1px solid rgba(196,164,107,.1);
+  transition:all .4s;
+}
+.t-card:hover{
+  background:rgba(250,247,245,.07);
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(0,0,0,.15);
+}
+
+.t-quote{
+  font-family:var(--serif);font-size:2.4rem;
+  color:var(--gold);line-height:1;margin-bottom:16px;
+  opacity:.5;
+}
+
+.t-text{
+  font-size:.92rem;color:rgba(250,247,245,.65);
+  line-height:1.75;margin-bottom:24px;font-weight:300;
+  font-style:italic;
+}
+
+.t-author{display:flex;align-items:center;gap:14px}
+.t-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),var(--blush));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;font-size:.8rem;color:var(--white);
+}
+.t-name{font-weight:600;font-size:.85rem;color:var(--cream)}
+.t-role{font-size:.72rem;color:rgba(250,247,245,.35);font-weight:400}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how{padding:120px 0;background:var(--cream)}
+
+.how-header{text-align:center;margin-bottom:72px}
+.how-header .body-lg{margin:0 auto}
+
+.steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  position:relative;
+}
+.steps::before{
+  content:'';position:absolute;top:28px;left:10%;right:10%;
+  height:1px;background:var(--gold-20);
+}
+
+.step{text-align:center;position:relative}
+.step-circle{
+  width:56px;height:56px;margin:0 auto 22px;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--gold);border-radius:50%;
+  background:var(--cream);position:relative;z-index:2;
+  font-family:var(--serif);font-size:1.15rem;color:var(--gold);
+  transition:all .35s;
+}
+.step:hover .step-circle{
+  background:var(--gold);color:var(--white);
+  transform:scale(1.08);
+  box-shadow:0 6px 20px rgba(196,164,107,.2);
+}
+.step-title{
+  font-family:var(--serif);font-size:1.05rem;font-weight:500;
+  color:var(--text-primary);margin-bottom:8px;
+}
+.step-desc{font-size:.82rem;color:var(--text-tertiary);line-height:1.6;font-weight:300;max-width:200px;margin:0 auto}
+
+/* ============================================================
+   CTA / FORM
+   ============================================================ */
+.cta{
+  padding:120px 0;position:relative;overflow:hidden;
+  background:var(--wine);color:var(--cream);
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 50% 50% at 20% 50%,rgba(201,120,138,.08),transparent),
+    radial-gradient(ellipse 40% 40% at 85% 30%,rgba(196,164,107,.05),transparent);
+  pointer-events:none;
+}
+
+.cta-grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;
+  align-items:center;
+}
+
+.cta-left .eyebrow{color:var(--gold)}
+.cta-left .heading-lg{color:var(--cream);margin-bottom:18px}
+.cta-left .heading-lg em{color:var(--blush)}
+.cta-copy{
+  font-size:1rem;color:rgba(250,247,245,.5);
+  line-height:1.8;margin-bottom:28px;font-weight:300;
+}
+.cta-nudge{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;border-radius:14px;
+  background:rgba(201,120,138,.08);
+  border:1px solid rgba(201,120,138,.12);
+  font-size:.88rem;color:rgba(250,247,245,.5);font-weight:300;
+}
+.cta-nudge-icon{font-size:1rem;flex-shrink:0}
+
+/* Form */
+.form-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(196,164,107,.12);
+  border-radius:22px;padding:40px;
+  backdrop-filter:blur(16px);
+  position:relative;
+}
+.form-card::after{
+  content:'';position:absolute;inset:-1px;
+  border-radius:22px;padding:1px;
+  background:linear-gradient(160deg,rgba(196,164,107,.25),transparent 40%,rgba(201,120,138,.15));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;
+}
+
+.form-heading{
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+  text-align:center;margin-bottom:28px;color:var(--cream);
+  letter-spacing:-.01em;
+}
+
+.field{margin-bottom:16px}
+.field label{
+  display:block;font-size:.68rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(250,247,245,.35);margin-bottom:6px;
+}
+.field input{
+  width:100%;padding:13px 16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(196,164,107,.12);
+  border-radius:12px;color:var(--cream);font-size:.92rem;
+  transition:all .3s;
+}
+.field input::placeholder{color:rgba(250,247,245,.2)}
+.field input:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,120,138,.12)}
+.field input.has-error{border-color:#e57373;box-shadow:0 0 0 3px rgba(229,115,115,.12)}
+.field-error{font-size:.7rem;color:#e57373;margin-top:4px;display:none}
+.field input.has-error~.field-error{display:block}
+
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+.form-btn{
+  width:100%;margin-top:8px;padding:15px;
+  background:var(--rose);color:var(--white);
+  font-size:.8rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;border-radius:100px;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 6px 24px var(--rose-glow);
+}
+.form-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,120,138,.4)}
+.form-btn svg{width:14px;height:14px}
+
+.form-alt{
+  text-align:center;margin-top:20px;
+  font-size:.8rem;color:rgba(250,247,245,.3);
+}
+.form-alt a{
+  color:var(--green);font-weight:600;
+  display:inline-flex;align-items:center;gap:5px;
+  transition:color .3s;
+}
+.form-alt a:hover{color:#34e87a}
+
+.form-ok{display:none;text-align:center;padding:32px 16px}
+.form-ok.show{display:block}
+.form-ok-icon{
+  width:56px;height:56px;margin:0 auto 14px;
+  border:2px solid var(--green);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;color:var(--green);
+  animation:popIn .45s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
+.form-ok h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:8px;color:var(--cream)}
+.form-ok p{font-size:.9rem;color:rgba(250,247,245,.5);font-weight:300}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{padding:48px 0 28px;background:var(--wine-95)}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px}
+.footer-brand{font-family:var(--serif);font-size:1.15rem;color:rgba(250,247,245,.6)}
+.footer-brand span{color:var(--rose)}
+.footer-row{display:flex;gap:28px}
+.footer-row a{font-size:.78rem;color:rgba(250,247,245,.3);transition:color .3s}
+.footer-row a:hover{color:var(--cream)}
+.footer-socials{display:flex;gap:10px}
+.footer-soc{
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(196,164,107,.1);border-radius:8px;
+  color:rgba(250,247,245,.3);transition:all .3s;
+}
+.footer-soc:hover{color:var(--gold);border-color:rgba(196,164,107,.25);transform:translateY(-2px)}
+.footer-soc svg{width:15px;height:15px}
+.footer-legal{font-size:.7rem;color:rgba(250,247,245,.15)}
+
+/* ============================================================
+   WHATSAPP FLOAT
+   ============================================================ */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:90;
+  width:54px;height:54px;border-radius:50%;
+  background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(37,211,102,.3);
+  transition:all .3s cubic-bezier(.34,1.56,.64,1);
+  animation:waPulse 3.5s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.wa-float svg{width:24px;height:24px;color:#fff}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.3)}
+  50%{box-shadow:0 4px 16px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.06)}
+}
+
+.wa-float .wa-tip{
+  position:absolute;right:64px;
+  background:var(--white);color:var(--wine);
+  padding:7px 14px;border-radius:8px;
+  font-size:.72rem;font-weight:600;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:all .3s;
+  box-shadow:0 4px 12px rgba(74,21,48,.08);
+}
+.wa-float .wa-tip::after{
+  content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);
+  border:4px solid transparent;border-left-color:var(--white);
+}
+.wa-float:hover .wa-tip{opacity:1;transform:translateX(-4px)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1024px){
+  .problems-top{grid-template-columns:1fr;gap:20px}
+  .problems-list{grid-template-columns:1fr}
+  .problem-item:nth-child(odd){border-right:none;padding-right:0}
+  .problem-item:nth-child(even){padding-left:0}
+  .solution-grid{grid-template-columns:1fr;gap:48px}
+  .solution-visual{order:-1;max-width:500px;margin:0 auto}
+  .features-bento{grid-template-columns:repeat(2,1fr)}
+  .features-bento .f-card:nth-child(1),
+  .features-bento .f-card:nth-child(4){grid-column:span 1}
+  .stats-row{grid-template-columns:repeat(3,1fr)}
+  .testimonials-row{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:28px}
+  .steps::before{display:none}
+  .cta-grid{grid-template-columns:1fr;gap:48px;text-align:center}
+  .cta-nudge{justify-content:center}
+}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero{min-height:auto;padding:110px 0 64px}
+  .hero-actions{flex-direction:column;width:100%}
+  .hero-actions a{width:100%;justify-content:center}
+  .features-bento{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr;gap:24px}
+  .testimonials-row{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .form-card{padding:28px 20px}
+  .footer-row{flex-direction:column;align-items:center;gap:12px}
+  .wa-float{width:48px;height:48px;bottom:20px;right:20px}
+  .wa-float svg{width:22px;height:22px}
+  .wa-float .wa-tip{display:none}
+}
+
+@media(max-width:480px){
+  .container{padding:0 18px}
+  .problems,.solution,.features,.proof,.how,.cta{padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================== NAV ======================== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-brand"><!-- LOGO AQUI --><span>AIOS</span>&thinsp;CRM</a>
+    <div class="nav-links">
+      <a href="#problemas">Desafios</a>
+      <a href="#solucao">Solução</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#contato" class="nav-cta">Demonstração</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><i></i><i></i><i></i></button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <a href="#problemas">Desafios</a>
+  <a href="#solucao">Solução</a>
+  <a href="#funcionalidades">Funcionalidades</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#contato">Demonstração</a>
+</div>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero" id="topo">
+  <div class="hero-wash"></div>
+  <div class="container hero-inner">
+    <div class="hero-eyebrow" data-reveal>Mais de 120 clínicas de estética íntima automatizadas</div>
+
+    <h1 class="heading-xl" data-reveal>
+      Sua clínica.<br>Mais organizada.<br>Suas pacientes.<br><em>Mais fiéis.</em>
+    </h1>
+
+    <p class="hero-sub" data-reveal>
+      O AIOS CRM automatiza o atendimento da sua clínica de estética íntima, reativa pacientes que somem após o primeiro procedimento e organiza toda a sua equipe — com inteligência artificial discreta e no tom certo.
+    </p>
+
+    <div class="hero-actions" data-reveal>
+      <a href="#contato" class="btn-rose">
+        Quero uma demonstração
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#" class="btn-outline-green" id="heroWa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== MARQUEE ======================== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Feito para <b>estética íntima</b></span>
+    <span>•</span>
+    <span>IA <b>humanizada</b> e discreta</span>
+    <span>•</span>
+    <span>+55% de <b>retorno</b> de pacientes</span>
+    <span>•</span>
+    <span>Ativação em <b>48 horas</b></span>
+    <span>•</span>
+    <span>API oficial do <b>WhatsApp</b></span>
+    <span>•</span>
+    <span>Gestor <b>dedicado</b> para sua clínica</span>
+    <span>•</span>
+    <span>Feito para <b>estética íntima</b></span>
+    <span>•</span>
+    <span>IA <b>humanizada</b> e discreta</span>
+    <span>•</span>
+    <span>+55% de <b>retorno</b> de pacientes</span>
+    <span>•</span>
+    <span>Ativação em <b>48 horas</b></span>
+    <span>•</span>
+    <span>API oficial do <b>WhatsApp</b></span>
+    <span>•</span>
+    <span>Gestor <b>dedicado</b> para sua clínica</span>
+    <span>•</span>
+  </div>
+</div>
+
+<!-- ======================== PROBLEMS ======================== -->
+<section class="problems" id="problemas">
+  <div class="container">
+    <div class="problems-top">
+      <div>
+        <span class="eyebrow" data-reveal>Cenário atual</span>
+        <h2 class="heading-lg" data-reveal>Você se identifica com alguma dessas <em>situações?</em></h2>
+      </div>
+      <p class="body-lg" data-reveal>A maioria das clínicas de estética íntima perde oportunidades todos os dias — não por falta de demanda, mas de organização.</p>
+    </div>
+
+    <div class="problems-list">
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">01</span>
+        <p class="problem-text">Leads que chegam pelo Instagram e nunca mais respondem depois do primeiro contato?</p>
+      </div>
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">02</span>
+        <p class="problem-text">Equipe usando WhatsApp pessoal sem histórico, sem controle e sem padronização?</p>
+      </div>
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">03</span>
+        <p class="problem-text">Pacientes que fizeram o primeiro procedimento e simplesmente desapareceram?</p>
+      </div>
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">04</span>
+        <p class="problem-text">Sem saber quem está em qual etapa da jornada de tratamento ou protocolo?</p>
+      </div>
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">05</span>
+        <p class="problem-text">Agendamentos esquecidos por falta de confirmação e lembrete automático?</p>
+      </div>
+      <div class="problem-item" data-reveal>
+        <span class="problem-num">06</span>
+        <p class="problem-text">Tráfego pago rodando e você sem saber qual campanha trouxe cada paciente?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SOLUTION ======================== -->
+<section class="solution" id="solucao">
+  <div class="container">
+    <div class="solution-grid">
+      <div class="solution-content">
+        <span class="eyebrow" data-reveal>A solução</span>
+        <h2 class="heading-lg" data-reveal>O CRM que entende a <em>delicadeza</em> do seu nicho</h2>
+        <p class="solution-desc" data-reveal>
+          O AIOS CRM é a plataforma de gestão feita para clínicas de estética íntima que querem crescer com discrição, reter pacientes com cuidado e profissionalizar o atendimento sem perder o toque humano.
+        </p>
+        <div class="solution-checks" data-reveal>
+          <div class="check-item">
+            <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="check-text"><strong>Resposta em menos de 3 min</strong> — IA acolhe, tira dúvidas e agenda com empatia</div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="check-text"><strong>Tom personalizado</strong> — discreta, acolhedora e no ritmo da paciente</div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="check-text"><strong>Funciona 24h, 7 dias</strong> — nunca perca uma paciente por falta de resposta</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-visual" data-reveal>
+        <div class="chat-window">
+          <div class="chat-topbar">
+            <span class="chat-dot chat-dot-r"></span>
+            <span class="chat-dot chat-dot-y"></span>
+            <span class="chat-dot chat-dot-g"></span>
+            <span class="chat-dot-spacer"></span>
+            <span class="chat-topbar-label">AIOS IA &bull; Ativa</span>
+          </div>
+          <div class="chat-body">
+            <div class="chat-bubble from-patient">
+              <span class="chat-bubble-label">Paciente</span>
+              Oi, vi no Instagram sobre o rejuvenescimento íntimo. Queria saber mais, mas tenho um pouco de vergonha de perguntar...
+            </div>
+            <div class="chat-bubble from-ai">
+              <span class="chat-bubble-label">AIOS IA</span>
+              Olá! Fico feliz que tenha entrado em contato. Aqui você pode perguntar com total tranquilidade e sigilo. Posso te explicar como funciona e tirar todas as dúvidas. O que gostaria de saber?
+            </div>
+            <div class="chat-bubble from-patient">
+              <span class="chat-bubble-label">Paciente</span>
+              Dói? Quantas sessões precisa?
+            </div>
+            <div class="chat-bubble from-ai">
+              <span class="chat-bubble-label">AIOS IA</span>
+              O procedimento é tranquilo — usamos anestésico tópico. O protocolo padrão é de 3 sessões com intervalo de 30 dias. Posso verificar horários para uma avaliação gratuita?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FEATURES ======================== -->
+<section class="features" id="funcionalidades">
+  <div class="container">
+    <div class="features-top">
+      <span class="eyebrow" data-reveal>Funcionalidades</span>
+      <h2 class="heading-lg" data-reveal>Tudo que sua clínica precisa.<br><em>Com a delicadeza que ela merece.</em></h2>
+      <p class="body-lg" data-reveal>Cada funcionalidade pensada para quem cuida de mulheres com sensibilidade.</p>
+    </div>
+
+    <div class="features-bento">
+      <div class="f-card" data-reveal>
+        <div class="f-num">01</div>
+        <h3 class="f-title">IA de Atendimento</h3>
+        <p class="f-desc">Agente humanizado que acolhe a paciente, apresenta procedimentos e qualifica o lead com discrição e empatia — 24 horas por dia, 7 dias por semana.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">02</div>
+        <h3 class="f-title">CRM Kanban</h3>
+        <p class="f-desc">Visualize toda a jornada da paciente em tempo real — da primeira consulta ao protocolo concluído.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">03</div>
+        <h3 class="f-title">Disparos Segmentados</h3>
+        <p class="f-desc">Comunicações personalizadas por procedimento e perfil via API oficial do WhatsApp.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">04</div>
+        <h3 class="f-title">Reativação de Pacientes</h3>
+        <p class="f-desc">Identifique pacientes que sumiram após a primeira sessão e reconquiste-as com mensagens acolhedoras e automáticas, no momento certo.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">05</div>
+        <h3 class="f-title">Gestão de Agenda</h3>
+        <p class="f-desc">Agendamentos, confirmações e lembretes automáticos para sessões e retornos.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">06</div>
+        <h3 class="f-title">Gestão da Equipe</h3>
+        <p class="f-desc">Controle profissionais, números e conversas em um único painel centralizado.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">07</div>
+        <h3 class="f-title">Relatórios de Tráfego</h3>
+        <p class="f-desc">Rastreamento completo das campanhas — saiba qual anúncio trouxe cada paciente.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">08</div>
+        <h3 class="f-title">Gestor Dedicado</h3>
+        <p class="f-desc">Um profissional AIOS gerencia sua conta e otimiza continuamente seus resultados.</p>
+      </div>
+      <div class="f-card" data-reveal>
+        <div class="f-num">09</div>
+        <h3 class="f-title">Recuperação de Pacientes</h3>
+        <p class="f-desc">Reative pacientes inativas com comunicações personalizadas no momento ideal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SOCIAL PROOF ======================== -->
+<section class="proof" id="resultados">
+  <div class="container proof-inner">
+    <div class="proof-header">
+      <span class="eyebrow" data-reveal>Resultados reais</span>
+      <h2 class="heading-lg" data-reveal>Números que traduzem cuidado<br>em <em>resultado.</em></h2>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat" data-reveal>
+        <div class="stat-number" data-count="55" data-pre="+" data-suf="%">+0%</div>
+        <div class="stat-label">Retorno de pacientes</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat-number" data-count="3" data-pre="" data-suf="x">0x</div>
+        <div class="stat-label">Agendamentos reativados</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat-number" data-count="0" data-pre="" data-suf="" data-zero="1">0</div>
+        <div class="stat-label">Leads sem resposta</div>
+      </div>
+    </div>
+
+    <div class="testimonials-row">
+      <!-- Placeholder: substituir por depoimentos reais -->
+      <div class="t-card" data-reveal>
+        <div class="t-quote">&ldquo;</div>
+        <p class="t-text">Nossas pacientes elogiaram a forma como a IA responde — discreta, acolhedora, sem parecer robô. Em dois meses, o retorno para segunda sessão subiu 60%.</p>
+        <div class="t-author">
+          <div class="t-avatar">RL</div>
+          <div>
+            <div class="t-name">Dra. Roberta Lins</div>
+            <!-- Placeholder: substituir por depoimento real -->
+            <div class="t-role">Diretora — Clínica Essência, SP</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card" data-reveal>
+        <div class="t-quote">&ldquo;</div>
+        <p class="t-text">Recuperamos 34 pacientes inativas há mais de 3 meses. A mensagem era tão bem escrita que muitas acharam que era eu mesma falando com elas.</p>
+        <div class="t-author">
+          <div class="t-avatar">FM</div>
+          <div>
+            <div class="t-name">Fernanda Moura</div>
+            <!-- Placeholder: substituir por depoimento real -->
+            <div class="t-role">Proprietária — Studio Íntima, MG</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card" data-reveal>
+        <div class="t-quote">&ldquo;</div>
+        <p class="t-text">Antes eu perdia horas respondendo DMs. Agora a IA cuida disso enquanto eu foco nos atendimentos. Minha agenda está sempre cheia e organizada.</p>
+        <div class="t-author">
+          <div class="t-avatar">AC</div>
+          <div>
+            <div class="t-name">Amanda Costa</div>
+            <!-- Placeholder: substituir por depoimento real -->
+            <div class="t-role">Biomédica — Clínica Renovar, PR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== HOW ======================== -->
+<section class="how" id="como-funciona">
+  <div class="container">
+    <div class="how-header">
+      <span class="eyebrow" data-reveal>Como funciona</span>
+      <h2 class="heading-lg" data-reveal>Da conversa inicial à sua<br>clínica <em>automatizada.</em></h2>
+      <p class="body-lg" data-reveal>Sem burocracia, sem complexidade. Nós cuidamos de tudo com você.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step" data-reveal>
+        <div class="step-circle">1</div>
+        <h3 class="step-title">Diagnóstico Gratuito</h3>
+        <p class="step-desc">Entendemos sua operação e o perfil das suas pacientes</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-circle">2</div>
+        <h3 class="step-title">Configuração</h3>
+        <p class="step-desc">IA treinada com o tom acolhedor da sua clínica</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-circle">3</div>
+        <h3 class="step-title">Ativação em 48h</h3>
+        <p class="step-desc">Conectamos com WhatsApp, Instagram e site</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-circle">4</div>
+        <h3 class="step-title">Gestão Contínua</h3>
+        <p class="step-desc">Gestor dedicado acompanha e otimiza resultados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section class="cta" id="contato">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <span class="eyebrow" data-reveal>Comece agora</span>
+        <h2 class="heading-lg" data-reveal>Comece hoje.<br><em>Sua clínica merece.</em></h2>
+        <p class="cta-copy" data-reveal>Preencha o formulário e receba um diagnóstico gratuito. Sem compromisso. Vamos mostrar o que o AIOS CRM pode fazer pela sua clínica.</p>
+        <div class="cta-nudge" data-reveal>
+          <span class="cta-nudge-icon">&#10047;</span>
+          <span>Cada paciente sem retorno é uma oportunidade de cuidado — e de faturamento — que não volta.</span>
+        </div>
+      </div>
+
+      <div class="form-card" data-reveal>
+        <form id="leadForm">
+          <div class="form-heading">Solicite sua demonstração</div>
+          <div class="field">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" placeholder="Como podemos te chamar?" required>
+            <div class="field-error">Informe seu nome.</div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" placeholder="(11) 99999-9999" required>
+              <div class="field-error">WhatsApp inválido.</div>
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" placeholder="Sua cidade" required>
+              <div class="field-error">Informe a cidade.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="clinica">Nome da clínica</label>
+            <input type="text" id="clinica" placeholder="Nome da sua clínica ou studio" required>
+            <div class="field-error">Informe a clínica.</div>
+          </div>
+          <button type="submit" class="form-btn">
+            Quero o AIOS na minha clínica
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+        <div class="form-ok" id="formOk">
+          <div class="form-ok-icon">&#10003;</div>
+          <h3>Recebemos seu contato!</h3>
+          <p>Em breve, uma especialista AIOS vai falar com você pelo WhatsApp.</p>
+        </div>
+        <div class="form-alt">
+          Prefere conversar agora? <a href="#" id="formWa"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><!-- LOGO AQUI --><span>AIOS</span>&thinsp;CRM</div>
+    <div class="footer-row">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Contato</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" class="footer-soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="#" class="footer-soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" class="footer-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+    <div class="footer-legal">&copy; 2025 AIOS CRM. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<!-- ======================== WHATSAPP FLOAT ======================== -->
+<a href="#" class="wa-float" id="waFloat" aria-label="WhatsApp">
+  <span class="wa-tip">Fale com uma consultora</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ======================== JS ======================== -->
+<script>
+// CONFIG
+const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_MESSAGE = "Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética íntima.";
+const WA = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+// WhatsApp links
+['waFloat','heroWa','formWa'].forEach(id => {
+  const el = document.getElementById(id);
+  if(el){el.href=WA;el.target='_blank';el.rel='noopener noreferrer'}
+});
+
+// Navbar pin
+const nav = document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('is-pinned',scrollY>50),{passive:true});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const navMob = document.getElementById('navMobile');
+hamburger.onclick = () => {
+  hamburger.classList.toggle('open');
+  navMob.classList.toggle('open');
+  document.body.style.overflow = navMob.classList.contains('open')?'hidden':'';
+};
+navMob.querySelectorAll('a').forEach(a => a.onclick = () => {
+  hamburger.classList.remove('open');
+  navMob.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const h = this.getAttribute('href');
+    if(h==='#') return;
+    e.preventDefault();
+    const t = document.querySelector(h);
+    if(t) window.scrollTo({top:t.getBoundingClientRect().top+scrollY-nav.offsetHeight-16, behavior:'smooth'});
+  });
+});
+
+// Scroll reveal with staggered children
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((en,i) => {
+    if(en.isIntersecting){
+      // stagger siblings that enter at the same time
+      en.target.style.transitionDelay = `${i * .06}s`;
+      en.target.classList.add('is-visible');
+      io.unobserve(en.target);
+    }
+  });
+},{threshold:.08, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+// Counter animation
+let counted = false;
+const counters = document.querySelectorAll('.stat-number');
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(en.isIntersecting && !counted){
+      counted = true;
+      counters.forEach(el => {
+        const to = +el.dataset.count, pre = el.dataset.pre||'', suf = el.dataset.suf||'';
+        const isZ = el.dataset.zero === '1';
+        const dur = 2400, t0 = performance.now();
+        if(isZ){
+          const from = 412;
+          !function f(now){
+            const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+            el.textContent=pre+Math.round(from*(1-e))+suf;
+            p<1&&requestAnimationFrame(f);
+          }(t0);
+        } else {
+          !function f(now){
+            const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+            el.textContent=pre+Math.round(to*e)+suf;
+            p<1&&requestAnimationFrame(f);
+          }(t0);
+        }
+      });
+    }
+  });
+},{threshold:.4});
+counters.forEach(el => cio.observe(el));
+
+// Form
+const form = document.getElementById('leadForm');
+const waIn = document.getElementById('whatsapp');
+
+waIn.oninput = e => {
+  let v = e.target.value.replace(/\D/g,'');
+  if(v.length>11) v=v.slice(0,11);
+  if(v.length>7) v=`(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  else if(v.length>2) v=`(${v.slice(0,2)}) ${v.slice(2)}`;
+  else if(v.length) v=`(${v}`;
+  e.target.value=v;
+};
+
+form.onsubmit = e => {
+  e.preventDefault();
+  let ok=true;
+  form.querySelectorAll('input[required]').forEach(f=>{
+    f.classList.remove('has-error');
+    if(!f.value.trim()){f.classList.add('has-error');ok=false}
+  });
+  if(waIn.value.replace(/\D/g,'').length<10){waIn.classList.add('has-error');ok=false}
+  if(ok){
+    console.log('Lead:',{
+      nome:document.getElementById('nome').value,
+      whatsapp:waIn.value,
+      cidade:document.getElementById('cidade').value,
+      clinica:document.getElementById('clinica').value,
+    });
+    form.style.display='none';
+    document.getElementById('formOk').classList.add('show');
+  }
+};
+form.querySelectorAll('input').forEach(i=>i.oninput=()=>i.classList.remove('has-error'));
+</script>
+</body>
+</html>
