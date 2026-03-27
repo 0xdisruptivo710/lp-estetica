@@ -17,3 +17,10 @@ open-react-template/
 tailwind-landing-page-template/
 taxonomy/
 ui/
+aceternity-ui/
+
+# Old subdirectory (moved to root)
+aios-crm/
+
+# Build artifacts
+tsconfig.tsbuildinfo
