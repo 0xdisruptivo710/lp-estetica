@@ -55,8 +55,8 @@ export function Hero() {
       {/* Full-screen background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80"
-          alt="Clínica de estética moderna"
+          src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=1920&q=80"
+          alt="Procedimento de estética facial"
           fill
           className="object-cover"
           priority

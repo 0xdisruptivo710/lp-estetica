@@ -37,6 +37,11 @@ const testimonials = [
     name: "Smile Skin",
     initials: "SS",
   },
+  {
+    text: "A automação do atendimento nos permitiu escalar sem perder qualidade. Nossas pacientes se sentem acolhidas desde o primeiro contato.",
+    name: "Dr Colágeno",
+    initials: "DC",
+  },
 ];
 
 export function Results() {
