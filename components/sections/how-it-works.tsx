@@ -6,8 +6,8 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const steps = [
   {
     num: 1,
-    title: "Diagnóstico Gratuito",
-    desc: "Entendemos sua operação e o perfil das suas pacientes",
+    title: "Conversa Estratégica",
+    desc: "Analisamos sua operação, o perfil das suas pacientes e os gargalos no atendimento para desenhar a solução ideal para sua clínica.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     num: 2,
-    title: "Configuração",
-    desc: "IA treinada com o tom acolhedor da sua clínica",
+    title: "Setup Personalizado",
+    desc: "Treinamos a IA com a linguagem da sua clínica, seus protocolos e o tom que suas pacientes já conhecem e confiam.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
@@ -26,8 +26,8 @@ const steps = [
   },
   {
     num: 3,
-    title: "Ativação em 48h",
-    desc: "Conectamos com WhatsApp, Instagram e site",
+    title: "Integração em 48h",
+    desc: "Conectamos WhatsApp, Instagram e seu site em menos de 2 dias. Você acompanha tudo em tempo real pelo painel.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -36,8 +36,8 @@ const steps = [
   },
   {
     num: 4,
-    title: "Gestão Contínua",
-    desc: "Gestor dedicado acompanha e otimiza resultados",
+    title: "Evolução Contínua",
+    desc: "Seu gestor dedicado analisa métricas, ajusta fluxos e garante que os resultados melhorem a cada mês.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -64,7 +64,7 @@ export function HowItWorks() {
           </BlurFade>
           <BlurFade inView delay={0.2}>
             <p className="mx-auto mt-4 max-w-[520px] text-[1.05rem] font-light leading-relaxed text-wine/50">
-              Sem burocracia, sem complexidade. Nós cuidamos de tudo com você.
+              Um processo simples e direto para colocar sua clínica no piloto automático — sem complicação, sem demora.
             </p>
           </BlurFade>
         </div>
@@ -73,8 +73,8 @@ export function HowItWorks() {
         <BlurFade inView delay={0.15}>
           <div className="relative mb-16 overflow-hidden rounded-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?auto=format&fit=crop&w=1200&q=80"
-              alt="Ambiente de spa relaxante"
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
+              alt="Clínica moderna e organizada"
               width={1200}
               height={350}
               className="h-48 w-full object-cover lg:h-64"
@@ -82,7 +82,7 @@ export function HowItWorks() {
             <div className="absolute inset-0 bg-gradient-to-r from-wine/30 via-transparent to-wine/20" />
             <div className="absolute bottom-6 right-6 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 backdrop-blur-md">
               <span className="text-[0.75rem] font-medium text-white">
-                Sua clínica rodando no piloto automático
+                Do diagnóstico à automação completa em 48h
               </span>
             </div>
           </div>

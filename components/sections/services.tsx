@@ -8,7 +8,7 @@ const procedures = [
   {
     title: "Rejuvenescimento Íntimo",
     desc: "Protocolo com laser e bioestimuladores que restaura firmeza, elasticidade e vitalidade da região íntima.",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z" />
@@ -20,7 +20,7 @@ const procedures = [
   {
     title: "Laser CO₂ Íntimo",
     desc: "Tecnologia fracionada que estimula colágeno na mucosa, tratando ressecamento e flacidez com precisão.",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <circle cx="12" cy="12" r="3" />
@@ -42,7 +42,7 @@ const procedures = [
   {
     title: "Clareamento Íntimo",
     desc: "Peeling e protocolos despigmentantes seguros para uniformizar o tom da pele na região íntima.",
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
@@ -52,7 +52,7 @@ const procedures = [
   {
     title: "Radiofrequência Íntima",
     desc: "Energia térmica controlada para retração de colágeno, melhorando tônus e sensibilidade da área tratada.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -62,7 +62,7 @@ const procedures = [
   {
     title: "Bioestimuladores Íntimos",
     desc: "Estimulação de colágeno com ácido poli-L-láctico para resultados progressivos e duradouros na região íntima.",
-    image: "https://images.unsplash.com/photo-1598300188904-6287d3b08abb?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />

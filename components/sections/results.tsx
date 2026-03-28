@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -14,25 +13,29 @@ const stats = [
 
 const testimonials = [
   {
-    text: "Nossas pacientes elogiaram a forma como a IA responde — discreta, acolhedora, sem parecer robô. Em dois meses, o retorno para segunda sessão subiu 60%.",
-    name: "Dra. Roberta Lins",
-    role: "Diretora — Clínica Essência, SP",
-    initials: "RL",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80",
+    text: "A IA responde nossas pacientes de forma discreta e acolhedora — muitas nem percebem que é automação. O retorno para segunda sessão subiu 60% em dois meses.",
+    name: "Face Doctor",
+    initials: "FD",
   },
   {
-    text: "Recuperamos 34 pacientes inativas há mais de 3 meses. A mensagem era tão bem escrita que muitas acharam que era eu mesma falando com elas.",
-    name: "Fernanda Moura",
-    role: "Proprietária — Studio Íntima, MG",
-    initials: "FM",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964ac31?auto=format&fit=crop&w=200&q=80",
+    text: "Recuperamos mais de 30 pacientes inativas em menos de 3 meses. As mensagens eram tão naturais que achavam que era a própria equipe falando.",
+    name: "Estudio Mais",
+    initials: "EM",
   },
   {
-    text: "Antes eu perdia horas respondendo DMs. Agora a IA cuida disso enquanto eu foco nos atendimentos. Minha agenda está sempre cheia e organizada.",
-    name: "Amanda Costa",
-    role: "Biomédica — Clínica Renovar, PR",
-    initials: "AC",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+    text: "Antes perdíamos horas respondendo DMs e WhatsApp. Agora a IA cuida de tudo enquanto focamos nos atendimentos. Agenda sempre cheia.",
+    name: "Botoclinic",
+    initials: "BC",
+  },
+  {
+    text: "O agendamento automático com confirmação e lembrete reduziu nossas faltas em mais de 40%. A organização mudou completamente.",
+    name: "Elevar",
+    initials: "EL",
+  },
+  {
+    text: "Finalmente sabemos qual campanha traz cada paciente. O controle sobre o tráfego pago e os leads melhorou radicalmente.",
+    name: "Smile Skin",
+    initials: "SS",
   },
 ];
 
@@ -95,17 +98,11 @@ export function Results() {
                   {t.text}
                 </p>
                 <div className="flex items-center gap-3.5">
-                  <div className="relative h-[46px] w-[46px] overflow-hidden rounded-full ring-2 ring-gold/20">
-                    <Image
-                      src={t.image}
-                      alt={t.name}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-rose/20 ring-2 ring-gold/20">
+                    <span className="text-[0.8rem] font-bold text-rose">{t.initials}</span>
                   </div>
                   <div>
                     <div className="text-[0.85rem] font-semibold text-cream">{t.name}</div>
-                    <div className="text-[0.72rem] text-cream/30">{t.role}</div>
                   </div>
                 </div>
               </div>

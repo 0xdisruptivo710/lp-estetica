@@ -33,7 +33,11 @@ export function CTA() {
     if (!form.clinica.trim()) errs.clinica = true;
     setErrors(errs);
     if (Object.keys(errs).length === 0) {
-      console.log("Lead:", form);
+      fetch("https://aios-n8n-webhook.yspmhc.easypanel.host/webhook/lp-estetica", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      }).catch(() => {});
       setSubmitted(true);
     }
   };

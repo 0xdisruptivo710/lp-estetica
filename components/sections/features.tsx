@@ -9,7 +9,7 @@ const features = [
     num: "01",
     title: "IA de Atendimento",
     desc: "Agente humanizado que acolhe a paciente, apresenta procedimentos e qualifica o lead com discrição e empatia — 24h por dia, 7 dias por semana.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
     span: true,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
@@ -90,7 +90,7 @@ const features = [
     num: "08",
     title: "Recuperação de Pacientes",
     desc: "Reative pacientes inativas com comunicações personalizadas no momento ideal do ciclo de tratamento.",
-    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />

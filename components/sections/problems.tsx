@@ -45,8 +45,8 @@ export function Problems() {
         <BlurFade inView delay={0.15}>
           <div className="relative mb-12 overflow-hidden rounded-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
-              alt="Interior de clínica moderna"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
+              alt="Profissional de estética pensativa"
               width={1200}
               height={400}
               className="h-56 w-full object-cover lg:h-72"
