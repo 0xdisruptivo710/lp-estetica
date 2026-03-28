@@ -33,7 +33,7 @@ export function Problems() {
           <div className="flex items-start gap-6">
             <BlurFade inView delay={0.2}>
               <p className="max-w-[520px] text-[1.05rem] font-light leading-relaxed text-wine/50">
-                A maioria das clínicas de estética íntima perde oportunidades todos os dias
+                A maioria das clínicas de estética facial e corporal perde oportunidades todos os dias
                 — não por falta de demanda, mas de organização.
               </p>
             </BlurFade>

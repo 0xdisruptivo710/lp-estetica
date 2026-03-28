@@ -45,8 +45,8 @@ export function Solution() {
             </BlurFade>
             <BlurFade inView delay={0.2}>
               <p className="my-5 text-[1.05rem] font-light leading-relaxed text-wine/50">
-                O AIOS CRM é a plataforma de gestão feita para clínicas de estética íntima que
-                querem crescer com discrição, reter pacientes com cuidado e profissionalizar
+                O AIOS CRM é a plataforma de gestão feita para clínicas de estética facial e corporal que
+                querem crescer com eficiência, reter pacientes com cuidado e profissionalizar
                 o atendimento sem perder o toque humano.
               </p>
             </BlurFade>
@@ -87,11 +87,11 @@ export function Solution() {
                 <div className="flex flex-col gap-3">
                   <div className="self-end rounded-2xl rounded-br-sm bg-gradient-to-br from-rose to-[#d48a9a] px-4 py-3 text-[0.84rem] leading-relaxed text-white" style={{ maxWidth: "84%" }}>
                     <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-white/60">Paciente</span>
-                    Oi, vi no Instagram sobre o rejuvenescimento íntimo. Queria saber mais, mas tenho um pouco de vergonha de perguntar...
+                    Oi, vi no Instagram sobre a harmonização facial. Queria saber mais sobre os procedimentos e valores...
                   </div>
                   <div className="self-start rounded-2xl rounded-bl-sm border border-gold/10 bg-cream px-4 py-3 text-[0.84rem] leading-relaxed text-wine/70" style={{ maxWidth: "84%" }}>
                     <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-rose">AIOS IA</span>
-                    Olá! Fico feliz que tenha entrado em contato. Aqui você pode perguntar com total tranquilidade e sigilo. Posso te explicar como funciona e tirar todas as dúvidas. O que gostaria de saber?
+                    Olá! Que bom que entrou em contato! A harmonização facial é um dos nossos protocolos mais procurados. Posso te explicar como funciona e tirar todas as dúvidas. O que gostaria de saber?
                   </div>
                   <div className="self-end rounded-2xl rounded-br-sm bg-gradient-to-br from-rose to-[#d48a9a] px-4 py-3 text-[0.84rem] leading-relaxed text-white" style={{ maxWidth: "84%" }}>
                     <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-white/60">Paciente</span>
@@ -99,7 +99,7 @@ export function Solution() {
                   </div>
                   <div className="self-start rounded-2xl rounded-bl-sm border border-gold/10 bg-cream px-4 py-3 text-[0.84rem] leading-relaxed text-wine/70" style={{ maxWidth: "84%" }}>
                     <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-rose">AIOS IA</span>
-                    O procedimento é tranquilo — usamos anestésico tópico. O protocolo padrão é de 3 sessões com intervalo de 30 dias. Posso verificar horários para uma avaliação gratuita?
+                    O procedimento é tranquilo e seguro — usamos técnicas minimamente invasivas. O protocolo varia conforme seus objetivos. Posso verificar horários para uma avaliação gratuita com a nossa especialista?
                   </div>
                 </div>
               </div>

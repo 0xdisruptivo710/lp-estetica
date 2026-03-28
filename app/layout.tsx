@@ -15,9 +15,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "AIOS CRM — Gestão Inteligente para Estética Íntima",
+  title: "AIOS CRM — Gestão Inteligente para Estética Facial e Corporal",
   description:
-    "CRM com IA para clínicas de estética íntima. Automatize atendimento, reative pacientes e organize sua equipe com inteligência e discrição.",
+    "CRM com IA para clínicas de estética facial e corporal. Automatize atendimento, reative pacientes e organize sua equipe com inteligência e eficiência.",
 };
 
 export default function RootLayout({

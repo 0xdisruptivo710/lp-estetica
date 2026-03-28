@@ -5,8 +5,8 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const procedures = [
   {
-    title: "Rejuvenescimento Íntimo",
-    desc: "Protocolo com laser e bioestimuladores que restaura firmeza, elasticidade e vitalidade da região íntima.",
+    title: "Harmonização Facial",
+    desc: "Protocolo completo com preenchimento, toxina botulínica e bioestimuladores para equilíbrio e naturalidade do rosto.",
     gradient: "linear-gradient(135deg, rgba(201,120,138,0.14) 0%, rgba(242,196,206,0.06) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -17,8 +17,8 @@ const procedures = [
     ),
   },
   {
-    title: "Laser CO₂ Íntimo",
-    desc: "Tecnologia fracionada que estimula colágeno na mucosa, tratando ressecamento e flacidez com precisão.",
+    title: "Limpeza de Pele Profunda",
+    desc: "Tratamento profissional que remove impurezas, desobstrui poros e prepara a pele para protocolos avançados.",
     gradient: "linear-gradient(135deg, rgba(196,164,107,0.16) 0%, rgba(201,120,138,0.05) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -28,8 +28,8 @@ const procedures = [
     ),
   },
   {
-    title: "Preenchimento Íntimo",
-    desc: "Ácido hialurônico para volumização e harmonização íntima, devolvendo autoestima e conforto funcional.",
+    title: "Peeling Químico",
+    desc: "Renovação celular com ácidos específicos para tratar manchas, textura irregular e sinais de envelhecimento.",
     gradient: "linear-gradient(135deg, rgba(74,21,48,0.09) 0%, rgba(201,120,138,0.06) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -39,8 +39,8 @@ const procedures = [
     ),
   },
   {
-    title: "Clareamento Íntimo",
-    desc: "Peeling e protocolos despigmentantes seguros para uniformizar o tom da pele na região íntima.",
+    title: "Radiofrequência Facial",
+    desc: "Tecnologia de energia térmica que estimula colágeno, combate flacidez e melhora a firmeza da pele.",
     gradient: "linear-gradient(135deg, rgba(242,196,206,0.2) 0%, rgba(196,164,107,0.05) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -49,8 +49,8 @@ const procedures = [
     ),
   },
   {
-    title: "Radiofrequência Íntima",
-    desc: "Energia térmica controlada para retração de colágeno, melhorando tônus e sensibilidade da área tratada.",
+    title: "Drenagem Linfática",
+    desc: "Técnica que reduz retenção de líquidos, melhora o contorno corporal e promove bem-estar geral.",
     gradient: "linear-gradient(135deg, rgba(196,164,107,0.13) 0%, rgba(242,196,206,0.06) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -59,8 +59,8 @@ const procedures = [
     ),
   },
   {
-    title: "Bioestimuladores Íntimos",
-    desc: "Estimulação de colágeno com ácido poli-L-láctico para resultados progressivos e duradouros na região íntima.",
+    title: "Bioestimuladores de Colágeno",
+    desc: "Estímulo natural de colágeno com ácido poli-L-láctico para uma pele mais firme e rejuvenescida.",
     gradient: "linear-gradient(135deg, rgba(201,120,138,0.11) 0%, rgba(196,164,107,0.08) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">

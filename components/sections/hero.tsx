@@ -84,7 +84,7 @@ export function Hero() {
           <div className="mx-auto mb-9 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-5 py-2 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
             <span className="text-[0.72rem] font-medium tracking-wider text-cream/70">
-              Mais de 120 clínicas de estética íntima automatizadas
+              Mais de 120 clínicas de estética automatizadas
             </span>
           </div>
         </BlurFade>
@@ -109,9 +109,9 @@ export function Hero() {
 
         <BlurFade delay={0.6} inView>
           <p className="mx-auto mb-11 max-w-[540px] text-[1.08rem] font-light leading-relaxed text-cream/60">
-            O AIOS CRM automatiza o atendimento da sua clínica de estética íntima, reativa pacientes
+            O AIOS CRM automatiza o atendimento da sua clínica de estética facial e corporal, reativa pacientes
             que somem após o primeiro procedimento e organiza toda a sua equipe — com inteligência
-            artificial discreta e no tom certo.
+            artificial eficiente e no tom certo.
           </p>
         </BlurFade>
 
@@ -128,7 +128,7 @@ export function Hero() {
             </ShimmerButton>
 
             <button
-              onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética íntima.")}`, "_blank")}
+              onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética facial e corporal.")}`, "_blank")}
               className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-green-500/30 bg-green-500/[0.06] px-7 py-4 text-[0.82rem] font-semibold tracking-wide text-green-400 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/15"
             >
               <WhatsAppIcon />

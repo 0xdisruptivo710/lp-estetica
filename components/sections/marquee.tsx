@@ -1,5 +1,5 @@
 const items = [
-  { text: "Feito para", bold: "estética íntima" },
+  { text: "Feito para", bold: "estética facial e corporal" },
   { text: "IA", bold: "humanizada e discreta" },
   { text: "+55% de", bold: "retorno de pacientes" },
   { text: "Ativação em", bold: "48 horas" },

@@ -22,7 +22,7 @@ const differentials = [
       </svg>
     ),
     title: "IA treinada para o nicho",
-    desc: "Não é um chatbot genérico. Nossa IA foi treinada com linguagem acolhedora específica para estética íntima.",
+    desc: "Não é um chatbot genérico. Nossa IA foi treinada com linguagem acolhedora específica para estética facial e corporal.",
   },
   {
     icon: (
