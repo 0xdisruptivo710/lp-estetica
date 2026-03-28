@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 
@@ -9,7 +8,7 @@ const features = [
     num: "01",
     title: "IA de Atendimento",
     desc: "Agente humanizado que acolhe a paciente, apresenta procedimentos e qualifica o lead com discrição e empatia — 24h por dia, 7 dias por semana.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(201,120,138,0.16) 0%, rgba(242,196,206,0.06) 60%, rgba(255,255,255,1) 100%)",
     span: true,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
@@ -22,7 +21,7 @@ const features = [
     num: "02",
     title: "CRM Kanban Visual",
     desc: "Visualize toda a jornada da paciente em tempo real — da primeira consulta ao protocolo concluído.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(196,164,107,0.16) 0%, rgba(201,120,138,0.04) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" />
@@ -33,7 +32,7 @@ const features = [
     num: "03",
     title: "Disparos Segmentados",
     desc: "Comunicações personalizadas por procedimento e perfil via API oficial do WhatsApp Business.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(74,21,48,0.1) 0%, rgba(201,120,138,0.06) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="m22 2-7 20-4-9-9-4z" /><path d="M22 2 11 13" />
@@ -44,7 +43,7 @@ const features = [
     num: "04",
     title: "Reativação Inteligente",
     desc: "Identifique pacientes que sumiram após a primeira sessão e reconquiste-as com mensagens acolhedoras e automáticas, no momento certo.",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(201,120,138,0.13) 0%, rgba(196,164,107,0.06) 60%, rgba(255,255,255,1) 100%)",
     span: true,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
@@ -56,7 +55,7 @@ const features = [
     num: "05",
     title: "Gestão de Agenda",
     desc: "Agendamentos, confirmações e lembretes automáticos para sessões, retornos e protocolos.",
-    image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(196,164,107,0.13) 0%, rgba(74,21,48,0.04) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="m9 16 2 2 4-4" />
@@ -67,7 +66,7 @@ const features = [
     num: "06",
     title: "Painel da Equipe",
     desc: "Controle profissionais, conversas e números em um único painel centralizado com permissões.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(74,21,48,0.08) 0%, rgba(242,196,206,0.08) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
@@ -78,7 +77,7 @@ const features = [
     num: "07",
     title: "Relatórios de Tráfego",
     desc: "Rastreamento completo das campanhas — saiba qual anúncio trouxe cada paciente e o ROI real.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(196,164,107,0.16) 0%, rgba(201,120,138,0.05) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="M21 21H4.6c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C3 20.24 3 19.96 3 19.4V3" />
@@ -90,7 +89,7 @@ const features = [
     num: "08",
     title: "Recuperação de Pacientes",
     desc: "Reative pacientes inativas com comunicações personalizadas no momento ideal do ciclo de tratamento.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    gradient: "linear-gradient(135deg, rgba(242,196,206,0.18) 0%, rgba(196,164,107,0.05) 60%, rgba(255,255,255,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
@@ -134,29 +133,36 @@ export function Features() {
                 gradientColor="rgba(201,120,138,0.08)"
               >
                 <div className="relative overflow-hidden p-0">
-                  {/* Card image */}
-                  <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                    <Image
-                      src={f.image}
-                      alt={f.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/30 to-transparent" />
+                  {/* Gradient header */}
+                  <div
+                    className="relative h-44 overflow-hidden rounded-t-2xl"
+                    style={{ background: f.gradient }}
+                  >
+                    {/* Decorative shapes */}
+                    <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border border-rose/[0.08] transition-transform duration-700 group-hover:scale-125" />
+                    <div className="absolute -bottom-5 -left-5 h-24 w-24 rounded-full border border-gold/[0.08] transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute right-[20%] top-[28%] h-2.5 w-2.5 rounded-full bg-gold/20 transition-all duration-500 group-hover:bg-gold/40 group-hover:scale-150" />
+                    <div className="absolute left-[25%] bottom-[22%] h-1.5 w-1.5 rounded-full bg-rose/15 transition-all duration-500 group-hover:bg-rose/35" />
+                    <div className="absolute right-[40%] top-[60%] h-1 w-1 rounded-full bg-wine/10" />
+                    {f.span && (
+                      <div className="absolute left-[60%] top-[35%] h-2 w-2 rounded-full bg-gold/15 transition-all duration-500 group-hover:bg-gold/30" />
+                    )}
 
-                    {/* Icon badge */}
-                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 shadow-lg shadow-wine/10 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                      {f.icon}
+                    {/* Centered icon */}
+                    <div className="flex h-full items-center justify-center">
+                      <div className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-white/80 shadow-lg shadow-wine/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-rose/10">
+                        <div className="scale-[1.35]">{f.icon}</div>
+                      </div>
                     </div>
 
                     {/* Number badge */}
-                    <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
-                      <span className="text-[0.65rem] font-semibold text-white">{f.num}</span>
+                    <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-wine/[0.06] backdrop-blur-sm">
+                      <span className="text-[0.65rem] font-semibold text-wine/40">{f.num}</span>
                     </div>
                   </div>
 
                   {/* Card content */}
-                  <div className="p-6 pt-4">
+                  <div className="p-6 pt-5">
                     <h3 className="mb-2 font-serif text-lg font-medium text-wine">{f.title}</h3>
                     <p className="text-[0.88rem] font-light leading-relaxed text-wine/50">{f.desc}</p>
                   </div>

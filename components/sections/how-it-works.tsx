@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const steps = [
@@ -69,21 +68,24 @@ export function HowItWorks() {
           </BlurFade>
         </div>
 
-        {/* Image divider */}
+        {/* Gradient divider */}
         <BlurFade inView delay={0.15}>
-          <div className="relative mb-16 overflow-hidden rounded-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
-              alt="Clínica moderna e organizada"
-              width={1200}
-              height={350}
-              className="h-48 w-full object-cover lg:h-64"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-wine/30 via-transparent to-wine/20" />
-            <div className="absolute bottom-6 right-6 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 backdrop-blur-md">
-              <span className="text-[0.75rem] font-medium text-white">
-                Do diagnóstico à automação completa em 48h
-              </span>
+          <div className="relative mb-16 overflow-hidden rounded-2xl bg-gradient-to-r from-wine via-wine/90 to-wine/80 px-8 py-8 lg:px-12 lg:py-10">
+            {/* Decorative shapes */}
+            <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full border border-gold/10" />
+            <div className="absolute -bottom-6 -left-6 h-28 w-28 rounded-full border border-rose/10" />
+            <div className="absolute right-[20%] bottom-[30%] h-2 w-2 rounded-full bg-gold/20" />
+            <div className="absolute left-[55%] top-[25%] h-1.5 w-1.5 rounded-full bg-rose/15" />
+
+            <div className="relative z-10 flex flex-col items-center gap-3 text-center">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/15">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-gold">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <p className="max-w-md font-serif text-[1.1rem] font-light text-cream/70">
+                Do diagnóstico à automação completa em <span className="font-medium text-gold">48h</span>
+              </p>
             </div>
           </div>
         </BlurFade>

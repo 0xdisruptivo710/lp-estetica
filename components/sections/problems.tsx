@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { cn } from "@/lib/utils";
 
@@ -41,19 +40,25 @@ export function Problems() {
           </div>
         </div>
 
-        {/* Image accent */}
+        {/* Gradient accent banner */}
         <BlurFade inView delay={0.15}>
-          <div className="relative mb-12 overflow-hidden rounded-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
-              alt="Profissional de estética pensativa"
-              width={1200}
-              height={400}
-              className="h-56 w-full object-cover lg:h-72"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-wine/40 via-transparent to-wine/20" />
-            <div className="absolute bottom-6 left-6 max-w-xs">
-              <p className="text-sm font-light leading-relaxed text-white/80">
+          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-wine via-wine/90 to-wine/80 px-8 py-10 lg:px-12 lg:py-14">
+            {/* Decorative elements */}
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-rose/10" />
+            <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full border border-gold/10" />
+            <div className="absolute right-[15%] top-[30%] h-2 w-2 rounded-full bg-gold/20" />
+            <div className="absolute left-[40%] bottom-[20%] h-1.5 w-1.5 rounded-full bg-rose/20" />
+            <div className="absolute right-[50%] top-[60%] h-1 w-1 rounded-full bg-blush/15" />
+
+            <div className="relative z-10 flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:gap-8">
+              {/* Quote icon */}
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose/15 backdrop-blur-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-blush">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z" />
+                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+                </svg>
+              </div>
+              <p className="max-w-lg font-serif text-[1.15rem] font-light italic leading-relaxed text-cream/70">
                 Cada lead não respondido é uma paciente que buscou ajuda — e encontrou silêncio.
               </p>
             </div>
