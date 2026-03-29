@@ -2,7 +2,6 @@
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Particles } from "@/components/ui/particles";
 
 const stats = [
@@ -48,15 +47,14 @@ export function Results() {
   return (
     <section id="resultados" className="relative overflow-hidden bg-wine py-28 text-cream lg:py-32">
       {/* Background effects */}
-      <BackgroundBeams />
       <Particles
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
         quantity={40}
         color="#C4A46B"
         size={0.3}
         staticity={60}
       />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_50%_at_15%_40%,rgba(201,120,138,.1),transparent),radial-gradient(ellipse_40%_40%_at_85%_60%,rgba(196,164,107,.06),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_45%_50%_at_15%_40%,rgba(201,120,138,.1),transparent),radial-gradient(ellipse_40%_40%_at_85%_60%,rgba(196,164,107,.06),transparent)]" />
 
       <div className="relative z-10 mx-auto max-w-[1100px] px-7">
         {/* Header */}
@@ -78,7 +76,7 @@ export function Results() {
           {stats.map((s, i) => (
             <BlurFade key={i} inView delay={0.15 * i}>
               <div className="text-center">
-                <div className="mb-2 font-serif text-[clamp(3rem,6vw,4.5rem)] font-normal leading-none tracking-tight text-blush">
+                <div className="mb-2 font-serif text-[clamp(3rem,6vw,4.5rem)] font-normal leading-none tracking-tight text-gold">
                   <AnimatedCounter
                     target={s.target}
                     prefix={s.prefix}
