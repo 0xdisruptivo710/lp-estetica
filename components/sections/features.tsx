@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 
@@ -12,10 +11,6 @@ const features = [
     gradient: "linear-gradient(135deg, rgba(201,120,138,0.22) 0%, rgba(74,21,48,0.08) 100%)",
     shape: "circle",
     span: true,
-    screenshot: {
-      src: "/plataforma/chatbot-flow.png",
-      alt: "Editor visual do fluxo de chatbot do AIOS, com blocos de início, perguntas e ações disponíveis (enviar mensagem, transferir atendimento, agendar).",
-    },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -41,10 +36,6 @@ const features = [
     desc: "Comunicações personalizadas por procedimento e perfil via API oficial do WhatsApp Business.",
     gradient: "linear-gradient(160deg, rgba(74,21,48,0.16) 0%, rgba(201,120,138,0.08) 50%, rgba(255,255,255,1) 100%)",
     shape: "lines",
-    screenshot: {
-      src: "/plataforma/mensagens-agendadas.jpg",
-      alt: "Painel de mensagens agendadas do AIOS com 50 atendimentos: contato, situação, canal WhatsApp, equipe responsável e status (Lida, Entregue, Agendado).",
-    },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="m22 2-7 20-4-9-9-4z" /><path d="M22 2 11 13" />
@@ -58,10 +49,6 @@ const features = [
     gradient: "linear-gradient(120deg, rgba(242,196,206,0.3) 0%, rgba(196,164,107,0.08) 60%, rgba(255,255,255,1) 100%)",
     shape: "rings",
     span: true,
-    screenshot: {
-      src: "/plataforma/sequencias.jpg",
-      alt: "Sequência 'Follow Up Retenção' do AIOS com etapas após 1 e 3 dias, métricas de disparos, visualização e engajamento por etapa.",
-    },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -98,10 +85,6 @@ const features = [
     desc: "Rastreamento completo das campanhas — saiba qual anúncio trouxe cada paciente e o ROI real.",
     gradient: "linear-gradient(135deg, rgba(196,164,107,0.3) 0%, rgba(74,21,48,0.06) 100%)",
     shape: "bars",
-    screenshot: {
-      src: "/plataforma/grafico-funil.png",
-      alt: "Gráfico de funil de conversão da campanha com etapas Total, Envio, Entregue, Lido (63%) e Interagido (38%).",
-    },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-rose">
         <path d="M21 21H4.6c-.56 0-.84 0-1.054-.109a1 1 0 0 1-.437-.437C3 20.24 3 19.96 3 19.4V3" />
@@ -236,35 +219,24 @@ export function Features() {
                 gradientColor="rgba(201,120,138,0.08)"
               >
                 <div className="relative overflow-hidden p-0">
-                  {/* Header — screenshot when available, gradient + icon otherwise */}
+                  {/* Gradient header */}
                   <div
                     className="relative h-44 overflow-hidden rounded-t-2xl"
                     style={{ background: f.gradient }}
                   >
-                    {f.screenshot ? (
-                      <div className="absolute inset-3 overflow-hidden rounded-xl bg-white shadow-lg shadow-wine/10 ring-1 ring-wine/5">
-                        <Image
-                          src={f.screenshot.src}
-                          alt={f.screenshot.alt}
-                          fill
-                          sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 33vw"
-                          className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                        />
+                    {/* Unique decorative shapes per card */}
+                    <ShapeDecoration shape={f.shape} span={f.span} />
+
+                    {/* Centered icon */}
+                    <div className="flex h-full items-center justify-center">
+                      <div className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-white/80 shadow-lg shadow-wine/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-rose/10">
+                        <div className="scale-[1.35]">{f.icon}</div>
                       </div>
-                    ) : (
-                      <>
-                        <ShapeDecoration shape={f.shape} span={f.span} />
-                        <div className="flex h-full items-center justify-center">
-                          <div className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-white/80 shadow-lg shadow-wine/5 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-rose/10">
-                            <div className="scale-[1.35]">{f.icon}</div>
-                          </div>
-                        </div>
-                      </>
-                    )}
+                    </div>
 
                     {/* Number badge */}
-                    <div className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-wine/[0.85] backdrop-blur-sm">
-                      <span className="text-[0.65rem] font-semibold text-cream">{f.num}</span>
+                    <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-wine/[0.06] backdrop-blur-sm">
+                      <span className="text-[0.65rem] font-semibold text-wine/40">{f.num}</span>
                     </div>
                   </div>
 
