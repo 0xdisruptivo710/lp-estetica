@@ -1,6 +1,6 @@
 "use client";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5515991286797";
 const WA_MSG = "Ola! Gostaria de saber mais sobre o AIOS CRM para minha clinica de estetica facial e corporal.";
 
 export function WhatsAppFloat() {

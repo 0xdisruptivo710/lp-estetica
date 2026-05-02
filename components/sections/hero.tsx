@@ -96,7 +96,7 @@ export function Hero() {
                 </ShimmerButton>
 
                 <button
-                  onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética facial e corporal.")}`, "_blank")}
+                  onClick={() => window.open(`https://wa.me/5515991286797?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética.")}`, "_blank")}
                   className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-green-500/30 bg-green-500/[0.06] px-7 py-4 text-[0.82rem] font-semibold tracking-wide text-green-400 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/15"
                 >
                   <WhatsAppIcon />

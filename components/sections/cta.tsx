@@ -7,7 +7,7 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Particles } from "@/components/ui/particles";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WA_NUMBER = "5511999999999";
+const WA_NUMBER = "5515991286797";
 const WA_MSG = "Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética facial e corporal.";
 
 function formatPhone(val: string) {

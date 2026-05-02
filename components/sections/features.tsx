@@ -205,7 +205,7 @@ export function Features() {
           </BlurFade>
           <BlurFade inView delay={0.2}>
             <p className="mx-auto mt-4 max-w-[520px] text-[1.05rem] font-light leading-relaxed text-wine/50">
-              Cada funcionalidade pensada para quem cuida de mulheres com sensibilidade.
+              Cada funcionalidade pensada para quem cuida de pessoas com sensibilidade.
             </p>
           </BlurFade>
         </div>

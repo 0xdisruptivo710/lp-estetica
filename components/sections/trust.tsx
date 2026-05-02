@@ -79,7 +79,7 @@ export function Trust() {
           </BlurFade>
           <BlurFade inView delay={0.1}>
             <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.1] tracking-tight text-wine">
-              Feito para quem cuida de<br /><em className="italic">mulheres com sensibilidade.</em>
+              Feito para quem cuida de<br /><em className="italic">pessoas com sensibilidade.</em>
             </h2>
           </BlurFade>
         </div>
