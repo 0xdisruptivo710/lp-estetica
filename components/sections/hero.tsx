@@ -20,30 +20,6 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const floatingImages = [
-  {
-    src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80",
-    alt: "Profissional de estética",
-    className: "absolute -left-4 top-1/4 hidden h-20 w-20 rounded-2xl lg:block",
-    delay: 1.0,
-    float: "animate-float-slow",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=300&q=80",
-    alt: "Tratamento estético",
-    className: "absolute -right-4 top-1/3 hidden h-24 w-24 rounded-2xl lg:block",
-    delay: 1.2,
-    float: "animate-float-medium",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=300&q=80",
-    alt: "Ambiente de spa",
-    className: "absolute -left-8 bottom-1/4 hidden h-16 w-16 rounded-xl lg:block",
-    delay: 1.4,
-    float: "animate-float-fast",
-  },
-];
-
 export function Hero() {
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
@@ -79,74 +55,87 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-[5%] bottom-[10%] z-[5] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(196,164,107,.08),transparent_70%)]" />
 
       {/* Content */}
-      <div className="container relative z-20 mx-auto max-w-[1100px] px-7 pb-20 pt-36 text-center">
-        <BlurFade delay={0.1} inView>
-          <div className="mx-auto mb-9 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-5 py-2 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
-            <span className="text-[0.72rem] font-medium tracking-wider text-cream/70">
-              Mais de 120 clínicas de estética automatizadas
-            </span>
-          </div>
-        </BlurFade>
-
-        {/* Floating images */}
-        <div className="relative mx-auto max-w-[780px]">
-          {floatingImages.map((img, i) => (
-            <BlurFade key={i} delay={img.delay} inView>
-              <div className={`${img.className} ${img.float} overflow-hidden border-2 border-white/10 shadow-2xl shadow-black/20`}>
-                <Image src={img.src} alt={img.alt} fill className="object-cover" />
+      <div className="container relative z-20 mx-auto max-w-[1240px] px-7 pb-20 pt-36">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          {/* Text column */}
+          <div className="text-center lg:text-left">
+            <BlurFade delay={0.1} inView>
+              <div className="mx-auto mb-9 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] px-5 py-2 backdrop-blur-sm lg:mx-0">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
+                <span className="text-[0.72rem] font-medium tracking-wider text-cream/70">
+                  Mais de 120 clínicas de estética automatizadas
+                </span>
               </div>
             </BlurFade>
-          ))}
 
-          <div className="mb-7">
-            <TextGenerateEffect
-              words="Sua clínica. Mais organizada. Suas pacientes. Mais fiéis."
-              className="font-serif text-[clamp(2.8rem,6.5vw,5.2rem)] font-normal leading-[1.02] tracking-tight text-cream"
-            />
+            <div className="mb-7">
+              <TextGenerateEffect
+                words="Sua clínica. Mais organizada. Suas pacientes. Mais fiéis."
+                className="font-serif text-[clamp(2.4rem,5.4vw,4.6rem)] font-normal leading-[1.04] tracking-tight text-cream"
+              />
+            </div>
+
+            <BlurFade delay={0.6} inView>
+              <p className="mx-auto mb-11 max-w-[540px] text-[1.05rem] font-light leading-relaxed text-cream/70 lg:mx-0">
+                O AIOS CRM automatiza o atendimento da sua clínica de estética facial e corporal, reativa pacientes
+                que somem após o primeiro procedimento e organiza toda a sua equipe — com inteligência
+                artificial eficiente e no tom certo.
+              </p>
+            </BlurFade>
+
+            <BlurFade delay={0.8} inView>
+              <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+                <ShimmerButton
+                  onClick={() => scrollTo("#contato")}
+                  shimmerColor="#ffffff"
+                  background="rgba(201,120,138,1)"
+                  className="text-[0.82rem] font-semibold uppercase tracking-wider"
+                >
+                  Quero uma demonstração
+                  <ArrowIcon />
+                </ShimmerButton>
+
+                <button
+                  onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética facial e corporal.")}`, "_blank")}
+                  className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-green-500/30 bg-green-500/[0.06] px-7 py-4 text-[0.82rem] font-semibold tracking-wide text-green-400 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/15"
+                >
+                  <WhatsAppIcon />
+                  Falar no WhatsApp
+                </button>
+              </div>
+            </BlurFade>
           </div>
+
+          {/* Phone mockup column */}
+          <BlurFade delay={0.4} inView>
+            <div className="relative mx-auto hidden max-w-[380px] lg:block">
+              <div
+                aria-hidden
+                className="absolute -inset-10 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_50%_45%,rgba(201,120,138,0.22),transparent_70%)]"
+              />
+              <Image
+                src="/plataforma/iphone-inbox.png"
+                alt="Atendimentos do AIOS CRM no celular: lista de pacientes priorizadas com etiquetas de fluxo, status e tempo de espera."
+                width={866}
+                height={2058}
+                priority
+                sizes="(max-width: 1024px) 0px, 380px"
+                className="h-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
+              />
+            </div>
+          </BlurFade>
         </div>
-
-        <BlurFade delay={0.6} inView>
-          <p className="mx-auto mb-11 max-w-[540px] text-[1.08rem] font-light leading-relaxed text-cream/60">
-            O AIOS CRM automatiza o atendimento da sua clínica de estética facial e corporal, reativa pacientes
-            que somem após o primeiro procedimento e organiza toda a sua equipe — com inteligência
-            artificial eficiente e no tom certo.
-          </p>
-        </BlurFade>
-
-        <BlurFade delay={0.8} inView>
-          <div className="flex flex-wrap justify-center gap-4">
-            <ShimmerButton
-              onClick={() => scrollTo("#contato")}
-              shimmerColor="#ffffff"
-              background="rgba(201,120,138,1)"
-              className="text-[0.82rem] font-semibold uppercase tracking-wider"
-            >
-              Quero uma demonstração
-              <ArrowIcon />
-            </ShimmerButton>
-
-            <button
-              onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre o AIOS CRM para minha clínica de estética facial e corporal.")}`, "_blank")}
-              className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-green-500/30 bg-green-500/[0.06] px-7 py-4 text-[0.82rem] font-semibold tracking-wide text-green-400 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/15"
-            >
-              <WhatsAppIcon />
-              Falar no WhatsApp
-            </button>
-          </div>
-        </BlurFade>
 
         {/* Scroll indicator */}
         <BlurFade delay={1.2} inView>
-          <div className="mt-16 flex flex-col items-center gap-2">
-            <span className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-cream/30">
+          <div className="mt-14 flex flex-col items-center gap-2">
+            <span className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-cream/40">
               Explore
             </span>
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="h-8 w-[1px] bg-gradient-to-b from-cream/30 to-transparent"
+              className="h-8 w-[1px] bg-gradient-to-b from-cream/40 to-transparent"
             />
           </div>
         </BlurFade>

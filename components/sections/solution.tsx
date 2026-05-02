@@ -19,16 +19,6 @@ const checks = [
 export function Solution() {
   return (
     <section id="solucao" className="relative overflow-hidden bg-cream py-28 lg:py-32">
-      {/* Decorative image strip */}
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/3 opacity-[0.04]">
-        <Image
-          src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80"
-          alt=""
-          fill
-          className="object-cover"
-        />
-      </div>
-
       <div className="mx-auto max-w-[1100px] px-7">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-[72px]">
           {/* Text */}
@@ -67,41 +57,37 @@ export function Solution() {
             </BlurFade>
           </div>
 
-          {/* Chat mockup inside MagicCard */}
+          {/* Real CRM screenshot inside MagicCard */}
           <BlurFade inView delay={0.2} direction="right">
-            <MagicCard className="mx-auto max-w-[500px] lg:mx-0">
-              <div className="p-6">
+            <MagicCard className="mx-auto max-w-[560px] lg:mx-0">
+              <div className="p-3 sm:p-4">
                 {/* Window chrome */}
-                <div className="mb-4 flex items-center gap-2 border-b border-gold/10 pb-3.5">
+                <div className="mb-3 flex items-center gap-2 border-b border-gold/10 pb-3">
                   <span className="h-[7px] w-[7px] rounded-full bg-red-300" />
                   <span className="h-[7px] w-[7px] rounded-full bg-amber-300" />
                   <span className="h-[7px] w-[7px] rounded-full bg-green-300" />
                   <span className="flex-1" />
-                  <span className="flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-widest text-wine/30">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
-                    AIOS IA &bull; Ativa
+                  <span className="flex items-center gap-1.5 text-[0.6rem] font-semibold uppercase tracking-widest text-wine/40">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                    AIOS &bull; CRM ao vivo
                   </span>
                 </div>
 
-                {/* Chat */}
-                <div className="flex flex-col gap-3">
-                  <div className="self-end rounded-2xl rounded-br-sm bg-gradient-to-br from-rose to-[#d48a9a] px-4 py-3 text-[0.84rem] leading-relaxed text-white" style={{ maxWidth: "84%" }}>
-                    <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-white/60">Paciente</span>
-                    Oi, vi no Instagram sobre a harmonização facial. Queria saber mais sobre os procedimentos e valores...
-                  </div>
-                  <div className="self-start rounded-2xl rounded-bl-sm border border-gold/10 bg-cream px-4 py-3 text-[0.84rem] leading-relaxed text-wine/70" style={{ maxWidth: "84%" }}>
-                    <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-rose">AIOS IA</span>
-                    Olá! Que bom que entrou em contato! A harmonização facial é um dos nossos protocolos mais procurados. Posso te explicar como funciona e tirar todas as dúvidas. O que gostaria de saber?
-                  </div>
-                  <div className="self-end rounded-2xl rounded-br-sm bg-gradient-to-br from-rose to-[#d48a9a] px-4 py-3 text-[0.84rem] leading-relaxed text-white" style={{ maxWidth: "84%" }}>
-                    <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-white/60">Paciente</span>
-                    Dói? Quantas sessões precisa?
-                  </div>
-                  <div className="self-start rounded-2xl rounded-bl-sm border border-gold/10 bg-cream px-4 py-3 text-[0.84rem] leading-relaxed text-wine/70" style={{ maxWidth: "84%" }}>
-                    <span className="mb-1 block text-[0.58rem] font-bold uppercase tracking-widest text-rose">AIOS IA</span>
-                    O procedimento é tranquilo e seguro — usamos técnicas minimamente invasivas. O protocolo varia conforme seus objetivos. Posso verificar horários para uma avaliação gratuita com a nossa especialista?
-                  </div>
+                {/* Kanban screenshot */}
+                <div className="overflow-hidden rounded-lg ring-1 ring-wine/5">
+                  <Image
+                    src="/plataforma/crm-kanban.jpg"
+                    alt="CRM em Kanban do AIOS: pacientes em colunas Prospecção, Contrato, Visita, Reclamação e Retenção, cada card com ticket, status e atendente."
+                    width={1802}
+                    height={943}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 560px"
+                    className="h-auto w-full"
+                  />
                 </div>
+
+                <p className="mt-3 px-1 text-[0.72rem] text-wine/45">
+                  Visão real do funil de pacientes — da primeira consulta ao retorno e reativação.
+                </p>
               </div>
             </MagicCard>
           </BlurFade>
