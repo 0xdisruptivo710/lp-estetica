@@ -5,66 +5,56 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const procedures = [
   {
-    title: "Harmonização Facial",
-    desc: "Protocolo completo com preenchimento, toxina botulínica e bioestimuladores para equilíbrio e naturalidade do rosto.",
+    title: "Protocolos Faciais",
+    desc: "Harmonização, peelings, bioestimuladores e tratamentos avançados — cada protocolo com fluxo próprio de retorno e manutenção.",
     gradient: "linear-gradient(135deg, rgba(201,120,138,0.14) 0%, rgba(242,196,206,0.06) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z" />
-        <path d="M17 4a2 2 0 0 0 2 2 2 2 0 0 0-2 2 2 2 0 0 0-2-2 2 2 0 0 0 2-2" />
-        <path d="M21 11a1 1 0 0 0 1 1 1 1 0 0 0-1 1 1 1 0 0 0-1-1 1 1 0 0 0 1-1" />
+        <path d="M12 2c4 0 6 4 6 9 0 6-3 11-6 11s-6-5-6-11c0-5 2-9 6-9z" />
+        <circle cx="10" cy="11" r="0.6" fill="currentColor" />
+        <circle cx="14" cy="11" r="0.6" fill="currentColor" />
+        <path d="M10.5 16c.5.6 1 .9 1.5.9s1-.3 1.5-.9" />
       </svg>
     ),
   },
   {
-    title: "Limpeza de Pele Profunda",
-    desc: "Tratamento profissional que remove impurezas, desobstrui poros e prepara a pele para protocolos avançados.",
+    title: "Protocolos Corporais",
+    desc: "Drenagem, modeladora, remodelagem e radiofrequência. Sessões e cronogramas organizados sem retrabalho.",
     gradient: "linear-gradient(135deg, rgba(196,164,107,0.16) 0%, rgba(201,120,138,0.05) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        <circle cx="12" cy="5" r="2" />
+        <path d="M12 7v5" />
+        <path d="M8 10c1.5 1 6.5 1 8 0" />
+        <path d="M10 12v5l-1 4" />
+        <path d="M14 12v5l1 4" />
       </svg>
     ),
   },
   {
-    title: "Peeling Químico",
-    desc: "Renovação celular com ácidos específicos para tratar manchas, textura irregular e sinais de envelhecimento.",
+    title: "Rejuvenescimento Íntimo",
+    desc: "Procedimentos estético-funcionais para a região íntima — laser, radiofrequência e protocolos com follow-up discreto.",
     gradient: "linear-gradient(135deg, rgba(74,21,48,0.09) 0%, rgba(201,120,138,0.06) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-        <path d="M12 8v8M8 12h8" />
+        <path d="M12 3l2 5 5 1-3.6 3.4.8 5L12 14.8 7.8 17.4l.8-5L5 9l5-1z" />
       </svg>
     ),
   },
   {
-    title: "Radiofrequência Facial",
-    desc: "Tecnologia de energia térmica que estimula colágeno, combate flacidez e melhora a firmeza da pele.",
+    title: "Transplante Capilar",
+    desc: "Avaliação, planejamento de unidades foliculares e acompanhamento pós-operatório com lembretes e fotos por etapa.",
     gradient: "linear-gradient(135deg, rgba(242,196,206,0.2) 0%, rgba(196,164,107,0.05) 50%, rgba(250,247,245,1) 100%)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-      </svg>
-    ),
-  },
-  {
-    title: "Drenagem Linfática",
-    desc: "Técnica que reduz retenção de líquidos, melhora o contorno corporal e promove bem-estar geral.",
-    gradient: "linear-gradient(135deg, rgba(196,164,107,0.13) 0%, rgba(242,196,206,0.06) 50%, rgba(250,247,245,1) 100%)",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Bioestimuladores de Colágeno",
-    desc: "Estímulo natural de colágeno com ácido poli-L-láctico para uma pele mais firme e rejuvenescida.",
-    gradient: "linear-gradient(135deg, rgba(201,120,138,0.11) 0%, rgba(196,164,107,0.08) 50%, rgba(250,247,245,1) 100%)",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <path d="M5 21c1-5 1.5-9 3-12" />
+        <path d="M9 21c.5-6 1-10 2-13" />
+        <path d="M13 21c.2-6 .5-11 1-14" />
+        <path d="M17 21c-.2-5-.2-9 .5-12" />
+        <circle cx="8" cy="6" r="0.7" fill="currentColor" />
+        <circle cx="11" cy="4.5" r="0.7" fill="currentColor" />
+        <circle cx="14" cy="5" r="0.7" fill="currentColor" />
+        <circle cx="17" cy="7" r="0.7" fill="currentColor" />
       </svg>
     ),
   },
@@ -99,7 +89,7 @@ export function Services() {
         </div>
 
         {/* Procedures grid */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2">
           {procedures.map((p, i) => (
             <BlurFade key={i} inView delay={0.08 * i}>
               <SpotlightCard className="h-full">
